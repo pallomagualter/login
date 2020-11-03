@@ -1,10 +1,26 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, TouchableOpacity, Text } from 'react-native';
+import firebase from 'react-native-firebase';
 
 export default function App() {
   state = {
     email: '',
     password: '',
+    isAuthenticated: false,
+  };
+
+  login = async () => {
+    const { email, password } = this.state;
+
+    try{
+      const user = await firebase.auth()
+      .signInWithEmailAndPassword(email, password);
+
+      this.setState({ isAuthenticated: true });
+      console.log(user);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
@@ -23,9 +39,11 @@ export default function App() {
         onChangeText={password => this.setState({ password })}
       />
       
-      <TouchableOpacity style={styles.button} onPress={() => {}}>
+      <TouchableOpacity style={styles.button} onPress={this.login}>
         <Text style={styles.buttonText}>LOG IN</Text>
       </TouchableOpacity>
+
+      { this.state.isAuthenticated ? <Text>Logado com sucesso!</Text> : <Text>Falha no login!</Text> }
     </View>
   );
 }
