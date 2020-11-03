@@ -9,8 +9,6 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Olá bebê!</Text>
-
       <TextInput 
         style={styles.input}
         placeholder="Digite seu e-mail"
@@ -26,7 +24,7 @@ export default function App() {
       />
       
       <TouchableOpacity style={styles.button} onPress={() => {}}>
-        <Text style={styles.buttonText}>Entrar</Text>
+        <Text style={styles.buttonText}>LOG IN</Text>
       </TouchableOpacity>
     </View>
   );
@@ -35,8 +33,31 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#333',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 20,
+  },
+  input: {
+    height: 45,
+    backgroundColor: '#fff',
+    alignSelf: 'stretch',
+    borderColor: '#EEE',
+    borderWidth: 1,
+    paddingHorizontal: 20,
+    marginBottom: 10,
+  },
+  button: {
+    height: 45,
+    backgroundColor: '#069',
+    alignSelf: 'stretch',
+    paddingHorizontal: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 20,
   },
 });
