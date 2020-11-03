@@ -21,10 +21,13 @@ export default function App() {
       <TextInput 
         style={styles.input}
         placeholder="Digite sua senha"
-        value={this.state.senha}
-        onChangeText={senha => this.setState({ senha })}
+        value={this.state.password}
+        onChangeText={password => this.setState({ password })}
       />
       
+      <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <Text style={styles.buttonText}>Entrar</Text>
+      </TouchableOpacity>
     </View>
   );
 }
