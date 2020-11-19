@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, TouchableOpacity, Text } from 'react-native';
-import firebase from 'react-native-firebase';
+import firebaseConfig from './src/firebaseConfig';
 
 export default function App() {
   state = {
